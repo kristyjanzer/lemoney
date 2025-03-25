@@ -14,3 +14,24 @@ burgerMenu.addEventListener("click", (e) => {
 
 
 $(".main-menu").clone().appendTo(".header-button-menu__body");
+
+
+
+
+// Range Slider
+const rangeInput = document.querySelector('.rangeslider__input');
+const	rangeCount = document.querySelector('.info-banner__count');
+let isRTL = document.documentElement.dir === 'rtl';
+
+rangeInput.addEventListener('input', () => {
+  rangeCount.textContent = rangeInput.value;
+
+  const min = rangeInput.min
+  const max = rangeInput.max
+  const val = rangeInput.value
+  let percentage = (val - min) * 100 / (max - min)
+  if (isRTL) {
+    percentage = (max - val) 
+  }
+  rangeInput.style.backgroundSize = percentage + '% 100%'
+});
