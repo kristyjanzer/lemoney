@@ -31,7 +31,7 @@ body {
 	line-height: 1.2;
 	font-family: $default-font;
 	overflow-x: hidden;
-	color: $text;
+	color: $black;
 	padding: 0;
 	margin: 0;
 
@@ -114,6 +114,7 @@ button {
 	color: $white;
 	transition: .3s all ease;
 	border-radius: 12px;
+	display: inline-block;
 
 	&:hover {
 		box-shadow: inset 0 0 0 30px rgba(255, 255, 255, .1);
@@ -127,7 +128,6 @@ button {
 .sect-title {
 	font-size: 36px;
 	font-weight: 600;
-	color: $black;
 	text-align: center;
 
 	&--bold {
@@ -201,7 +201,6 @@ button {
 	}
 
 	&__text {
-		color: $black;
 		font-size: 18px;
 		font-weight: 600;
 		padding: 0 7px;
@@ -275,13 +274,12 @@ button {
 	}
 
 	&__count {
-		color: #006DBF;
+		color: $accent;
 		font-size: 22px;
 		font-weight: 700;
 	}
 
 	&__title {
-		color: $black;
 		font-size: 22px;
 		line-height: 124%;
 		font-weight: 700;
@@ -408,7 +406,6 @@ button {
 	&__descr {
 		font-size: 24px;
 		font-weight: 600;
-		color: $black;
 		margin-top: 15px;
 		text-align: center;
 		max-width: 770px;
@@ -417,9 +414,113 @@ button {
 			margin-top: 40px;
 		}
 	}
+
+	&__list {
+		margin-top: 28px;
+	}
+
+	&__text {
+		margin-top: 57px;
+		font-size: 18px;
+		font-weight: 500;
+		text-align: center;
+	}
+}
+
+.m-list {
+	width: 100%;
+
+	&__row {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		flex-wrap: wrap;
+	}
+
+	&__list {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 30px;
+		width: 100%;
+	}
+
+	&__item {
+		display: flex;
+	}
+
+	&__image {
+		width: 70px;
+		height: 70px;
+		border-radius: 50%;
+		padding: 8px 12px;
+		display: flex;
+    align-items: center;
+    justify-content: center;
+		flex: 1 0 auto;
+
+		img {
+			width: auto;
+		}
+	}
+
+	&__text {
+		font-size: 20px;
+		font-weight: 600;
+		max-width: 280px;
+	}
+
+	&--accent {
+		.m-list__image {
+			background-color: $accent;
+		}
+	}
+
+	&--white {
+		.m-list__image {
+			background-color: $white;
+		}
+	}
+
+	&--row {
+		.m-list__item {
+			flex-direction: row;
+			align-items: center;
+			gap: 20px;
+		}
+	}
+
+	&--col {
+		.m-list__list {
+			max-width: 900px;
+		}
+
+		.m-list__item {
+			flex-direction: column;
+			align-items: center;
+			gap: 18px;
+		}
+	}
 }
 
 
+.steps {
+	&__list {
+		margin-top: 62px;
+	}
+
+	&__button {
+		margin-top: 60px;
+		display: flex;
+		justify-content: center;
+
+		.button {
+			min-width: 240px;
+		}
+	}
+}
 
 
 
@@ -461,6 +562,14 @@ button {
 
 
 @media (max-width: 900px) {
+	.sect-title {
+		font-size: 30px;
+	}
+
+	.sect-padding {
+		padding: 45px 0;
+	}
+
 	.header {
 		&__info {
 			gap: 10px;
@@ -625,6 +734,39 @@ button {
 			font-size: 14px;
 			margin-top: 25px;
 			max-width: 150px;
+		}
+	}
+
+	.how-work {
+		&__descr {
+			font-size: 20px;
+		}
+	}
+
+	.m-list {
+		width: auto;
+		
+		&__list {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 25px;
+			width: auto;
+		}
+
+		&--col {
+			.m-list__item {
+				flex-direction: row;
+			}
+		}
+	}
+
+	.steps {
+		&__list {
+			margin-top: 50px;
+		}
+
+		&__button {
+			margin-top: 50px;
 		}
 	}
 
