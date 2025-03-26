@@ -35,3 +35,37 @@ rangeInput.addEventListener('input', () => {
   }
   rangeInput.style.backgroundSize = percentage + '% 100%'
 });
+
+
+
+// Slider Default
+$('.uni-slider').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  dots: false,
+  arrows: true,
+  infinite: true,
+  adaptiveHeight: true,
+  responsive: [
+    {
+      breakpoint: 1100,
+        settings: {
+          dots: false,
+          arrows: true,
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          adaptiveHeight: true
+        },
+    },
+    {
+      breakpoint: 700,
+        settings: {
+          dots: false,
+          arrows: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          adaptiveHeight: true
+        },
+    }
+  ]
+});
