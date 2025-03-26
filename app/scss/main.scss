@@ -130,12 +130,27 @@ button {
 	font-weight: 600;
 	text-align: center;
 
+	& + p,
+	& + .sect-descr {
+		margin-top: 15px;
+	}
+
 	&--bold {
 		font-weight: 700;
 	}
 
 	&--white {
 		color: $white;
+	}
+}
+
+.sect-descr {
+	font-size: 24px;
+	font-weight: 600;
+	text-align: center;
+
+	& + & {
+		margin-top: 40px;
 	}
 }
 
@@ -403,20 +418,12 @@ button {
 		align-items: center;
 	}
 
-	&__descr {
-		font-size: 24px;
-		font-weight: 600;
-		margin-top: 15px;
-		text-align: center;
-		max-width: 770px;
-
-		& + & {
-			margin-top: 40px;
-		}
-	}
-
 	&__list {
 		margin-top: 35px;
+	}
+
+	&__descr {
+		max-width: 770px;
 	}
 
 	&__text {
@@ -675,8 +682,6 @@ button {
 	padding: 330px 0 105px;
 }
 
-
-
 .сonditions {
 	&__list {
 		margin-top: 50px;
@@ -694,6 +699,165 @@ button {
 	}
 }
 
+.form-section {
+	background-color: #e6f0f9;
+
+	&__form {
+		margin-top: 45px;
+	}
+}
+
+.form {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	&__inputs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 970px;
+	}
+
+	&__col {
+    display: flex;
+    flex-direction: column;
+		align-self: flex-start;
+		width: 48%;
+		gap: 35px;
+	}
+
+	&__wrap {
+    display: flex;
+		flex-direction: column;
+		gap: 6px;
+		position: relative;
+	}
+
+	&__label {
+		font-size: 16px;
+		font-weight: 500;
+	}
+
+	&__button {
+		min-width: 240px;
+		margin-top: 60px;
+	}
+
+	&__input {
+		border-radius: 10px;
+    border: 1px solid rgba(0, 109, 191, 0.3);
+		background-color: $white;
+    width: 100%;
+    min-height: 60px;
+    padding: 15px;
+    font-size: 16px;
+    color: #110836;
+    font-weight: 500;
+
+		&::-webkit-input-placeholder {
+			color: #999999;
+		}
+
+		&::-moz-placeholder {
+			color: #999999;
+		}
+
+		&:-ms-input-placeholder {
+			color: #999999;
+		}
+
+		&::placeholder {
+			color: #999999;
+		}
+
+		&.error {
+			border: 1px solid #ff5f00 !important;
+		}
+	}
+
+	label.error {
+    color: #ff5f00;
+    font-size: 12px;
+		position: absolute;
+    bottom: -18px;
+	}
+}
+
+.drop-menu {
+	padding: 15px;
+	background-color: $white;
+	border-radius: 5px;
+	border: 1px solid rgba(0, 109, 191, 0.3);
+	transition: all .5s ease;
+	position: relative;
+	font-size: 16px;
+	border-radius: 10px;
+	min-height: 60px;
+	color: $black;
+	display: flex;
+	align-items: center;
+	outline: 0;
+	cursor: pointer;
+
+	&:active {
+		background-color: #f8f8f8;
+	}
+
+	&__select {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+    position: relative;
+		width: 100%;
+	}
+
+	&.active, &.active:hover {
+    box-shadow: 0 6px 30px -16px #6d6d6d;
+    border-radius: 5px 5px 0 0;
+    background-color: #f8f8f8;
+    color: $black;
+	}
+
+	&.active {
+		.drop-menu__icon {
+			transform: rotate(180deg);
+		}
+	}
+
+	&__icon {
+		transition: all .5s ease;
+	}
+
+	&__dropeddown {
+    position: absolute;
+    color: $black;
+    background-color: $white;
+    width: 100%;
+    top: 98%;
+    left: 0;
+    margin-top: 1px;
+    box-shadow: 0 6px 30px -16px #6d6d6d;
+    border-radius: 0 1px 5px 5px;
+    overflow: hidden;
+    display: none;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 9;
+    padding: 0;
+    list-style: none;
+	}
+
+	&__item {
+    padding: 15px;
+    padding-left: 18px;
+    transition: all .2s ease;
+    cursor: pointer;
+	}
+}
 
 .footer {
 	background-color: $accent;
@@ -777,12 +941,24 @@ button {
 			max-width: 100%;
 		}
 	}
+
+	.slick-arrow.slick-prev {
+		left: 40%;
+	}
+
+	.slick-arrow.slick-next {
+		right: 40%;
+	}
 }
 
 
 @media (max-width: 900px) {
 	.sect-title {
 		font-size: 30px;
+	}
+
+	.sect-descr {
+		font-size: 20px;
 	}
 
 	.sect-padding {
@@ -956,12 +1132,6 @@ button {
 		}
 	}
 
-	.how-work {
-		&__descr {
-			font-size: 20px;
-		}
-	}
-
 	.m-list {
 		width: auto;
 		
@@ -1008,6 +1178,18 @@ button {
 		padding: 295px 0 90px;
 	}
 
+	.form {
+		&__inputs {
+			flex-direction: column;
+			max-width: 100%;
+			gap: 35px;
+		}
+
+		&__col {
+			width: 100%;
+		}
+	}
+
 	.footer {
 		&__col {
 			flex-direction: column;
@@ -1029,7 +1211,13 @@ button {
 
 
 @media (max-width: 600px) {
+	.slick-arrow.slick-prev {
+		left: 30%;
+	}
 
+	.slick-arrow.slick-next {
+		right: 30%;
+	}
 }
 
 

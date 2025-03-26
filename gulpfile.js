@@ -43,6 +43,8 @@ gulp.task('styles', function() {
 gulp.task('scripts', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
+		'app/libs/inputmask/jquery.inputmask.bundle.min.js',
+		'app/libs/jquery.validate.min.js',
 		'app/libs/slick-slider/slick.js',
 		'app/js/common.js', // Always at the end
 		])

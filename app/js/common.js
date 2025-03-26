@@ -69,3 +69,69 @@ $('.uni-slider').slick({
     }
   ]
 });
+
+
+
+// Phone Mask
+$.each($('input#phone'), function (index, val) {
+  $(this).focus(function () {
+    $(this).inputmask('+7 (999) 999-99-99', {
+      clearMaskOnLostFocus: true, showMaskOnHover: false
+    });
+  });
+});
+
+$.each($('input#tin'), function (index, val) {
+  $(this).inputmask('999999999999', {
+    clearMaskOnLostFocus: true, showMaskOnHover: false
+  });
+});
+
+
+// Validate Form
+$('.form').validate({
+  rules: {
+    tin: {
+      required: true,
+      minlength: 12,
+      maxlength: 12,
+      number: true
+    },
+    phone: {
+      required: true,
+      minlength: 18,
+      maxlength: 18,
+    }
+  },
+  messages: {
+    tin: {
+      number: "Пожалуйста, введите полностью ИИН",
+      required: "Пожалуйста, введите полностью ИИН"
+    },
+    phone: {
+      required: "Пожалуйста, введите полностью номер"
+    },
+    surname: {
+      required: "Пожалуйста, заполните поле"
+    },
+    name: {
+      required: "Пожалуйста, заполните поле"
+    }
+  }
+});
+
+
+// Dropmenu
+$('.drop-menu').click(function () {
+  $(this).attr('tabindex', 1).focus();
+  $(this).toggleClass('active');
+  $(this).find('.drop-menu__dropeddown').slideToggle(300);
+});
+$('.drop-menu').focusout(function () {
+  $(this).removeClass('active');
+  $(this).find('.drop-menu__dropeddown').slideUp(300);
+});
+$('.drop-menu__item').click(function () {
+  $(this).parents('.drop-menu').find('span').text($(this).text());
+  $(this).parents('.drop-menu').find('input').attr('value', $(this).attr('id'));
+});

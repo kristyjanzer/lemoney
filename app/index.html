@@ -102,8 +102,8 @@
 			<div class="container">
 				<div class="how-work__row">
 					<h2 class="sect-title">Как работает сервис?</h2>
-					<p class="how-work__descr">Подайте заявку онлайн на получение денег за ваши гаджеты и бытовую технику.</p>
-					<p class="how-work__descr">В качестве залога принимаем:</p>
+					<p class="how-work__descr sect-descr">Подайте заявку онлайн на получение денег за ваши гаджеты и бытовую технику.</p>
+					<p class="how-work__descr sect-descr">В качестве залога принимаем:</p>
 					<div class="how-work__list m-list m-list--white m-list--col">
 						<div class="m-list__row">
 							<ul class="m-list__list">
@@ -328,6 +328,66 @@
 						</div>
 					</div>
 				</div>
+			</div>
+		</section>
+
+		<section class="form-section sect-padding">
+			<div class="container">
+				<h1 class="sect-title">Оформить заявку</h1>
+				<p class="sect-descr">Заполните форму и ожидайте звонка оператора.</p>
+				<form class="form-section__form form">
+					<div class="form__inputs">
+						<div class="form__col">
+							<div class="form__wrap">
+								<label class="form__label" for="surname">Ваша фамилия</label>
+								<input type="text" name="surname" class="form__input surname" required autocomplete="off" placeholder="Введите фамилию">
+							</div>
+							<div class="form__wrap">
+								<label class="form__label" for="patronymic">Ваше отчество</label>
+								<input type="text" name="patronymic" class="form__input patronymic" autocomplete="off" placeholder="Введите отчество">
+							</div>
+							<div class="form__wrap">
+								<label class="form__label" for="tin">ИИН</label>
+								<input type="text" name="tin" id="tin" class="form__input tin" required autocomplete="off" placeholder="Введите ИИН">
+							</div>
+						</div>
+						<div class="form__col">
+							<div class="form__wrap">
+								<label class="form__label" for="name">Ваше имя</label>
+								<input type="text" name="name" class="form__input name" required autocomplete="off" placeholder="Введите имя">
+							</div>
+							<div class="form__wrap">
+								<label class="form__label" for="phone">Моб. телефон</label>
+								<input type="tel" name="phone" id="phone" class="form__input phone" required autocomplete="off" placeholder="+7 (___) ___ __ __">
+							</div>
+							<div class="form__wrap">
+								<label class="form__label" for="phone">Техника</label>
+								<div class="form__drop-menu drop-menu">
+									<div class="drop-menu__select">
+										<span>Смартфон</span>
+										<div class="drop-menu__icon">
+											<svg width="17.228394" height="11.442627" viewBox="0 0 17.2284 11.4426" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+												<desc>
+														Created with Pixso.
+												</desc>
+												<defs></defs>
+												<path id="Vector 2" d="M15.81 1.41L8.61 8.61L1.41 1.41" stroke="#333333" stroke-opacity="1.000000" stroke-width="4.000000"></path>
+											</svg>
+										</div>
+									</div>
+									<ul class="drop-menu__dropeddown">
+										<li class="drop-menu__item">Выберите тему 1</li>
+										<li class="drop-menu__item">Выберите тему 2</li>
+										<li class="drop-menu__item">Выберите тему 3</li>
+										<li class="drop-menu__item">Выберите тему 4</li>
+										<li class="drop-menu__item">Выберите тему 5</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button type="submit" name="submit" class="form__button button">Оформить заявку</button>
+				</form>
 			</div>
 		</section>
 	</main>
